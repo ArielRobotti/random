@@ -59,12 +59,15 @@ module {
         "m", "n", "o", "p", "q", "r","s", "t", "u", "v", "w", "x", "y", "z", "Ñ"
         ];
       var result: Text = "";
+      let rangeBkUp = range;
+      let biasBkUp = bias;
       setRange(0, chars.size());
       var i = 0;
       while (i < s){
         result := result # chars[await next()];
         i += 1;
       };
+      setRange(biasBkUp, rangeBkUp + biasBkUp);
       result;
     };
 
