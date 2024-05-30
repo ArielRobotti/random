@@ -44,8 +44,7 @@ module {
     };
 
     public func randRange(a: Nat, b: Nat): async Nat{
-      let rangeBkUp = range;
-      let biasBkUp = bias;
+      let (rangeBkUp, biasBkUp) = (range, bias);
       setRange(a,b);
       let result = await next();
       setRange(biasBkUp, rangeBkUp + biasBkUp);
@@ -59,8 +58,7 @@ module {
         "m", "n", "o", "p", "q", "r","s", "t", "u", "v", "w", "x", "y", "z", "Ñ"
         ];
       var result: Text = "";
-      let rangeBkUp = range;
-      let biasBkUp = bias;
+      let (rangeBkUp, biasBkUp) = (range, bias);
       setRange(0, chars.size());
       var i = 0;
       while (i < s){
